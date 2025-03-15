@@ -1,5 +1,3 @@
-![logo](logo.svg)
-
 # Nushell - a language grammar for [highlight.js](https://highlightjs.org/)
 
 <!-- ![version](https://badgen.net/npm/v/highlightjs-nushell) -->
