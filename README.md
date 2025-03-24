@@ -6,7 +6,7 @@
 ![license](https://badgen.net/badge/license/CC0%201.0/blue)
 [![Build Status](https://travis-ci.com/highlightjs/highlightjs-nushell.svg?branch=master)](https://travis-ci.com/LoicRiegel/highlightjs-nushell)
 
-[Nushell](https://www.nushell.sh/) is a modern shell that uses structured data , making it easy to filter, transform, and manipulate it. It works on any OS, has a powerful plugin system and plenty other features that one expects from a modern shell.
+[Nushell](https://www.nushell.sh/) is a modern shell that uses structured data, making it easy to filter, transform, and manipulate it. It works on any OS, has a powerful plugin system and plenty other features that one expects from a modern shell.
 
 ## Usage
 

@@ -5,9 +5,8 @@
  * Description: a modern shell that uses structured data and a programming language.
  * Website: https://www.nushell.sh/
  */
-
-export default function(hljs) {
-
+module.exports = function (hljs)
+{
   const KNOWN_SHEBANG = hljs.SHEBANG({
     binary: "nu",
     relevance: 10
@@ -91,20 +90,24 @@ export default function(hljs) {
     "cell-path"
   ]
 
-  const KEYWORDS = {
-    $pattern: /[A-Za-z]\w+/,
-    keyword: RESERVED_WORDS,
-    built_in: BUILT_INS_CORE,
-    literal: LITERALS,
-    type: TYPES
-  };
-
   return {
     name: 'Nushell',
-    aliases: [
-      'nu',
-    ],
-    unicodeRegex: true,
-    keywords: KEYWORDS,
-  };
+    aliases: ['nu'],
+    case_insensitive: false,
+    keywords:
+      {
+        $pattern: /[A-Za-z]\w+/,
+        keyword: RESERVED_WORDS,
+        literal: LITERALS,
+        built_in: [
+          ...BUILT_INS_CORE,
+          ...BUILT_INS_FILTERS
+        ],
+        type: TYPES
+      },
+    contains:
+      [
+        KNOWN_SHEBANG,
+      ]
+  }
 }
