@@ -99,12 +99,28 @@ export default function(hljs) {
     type: TYPES
   };
 
+  const NUMBER = {
+    className: 'number',
+    relevance: 0,
+    variants: [
+      { begin: "-?\\b\\d+\\.?\\d*([eE]-?\\d+)?\\b" },  // Decimal & Scientific Notation
+      { begin: "-?\\b0x[0-9a-fA-F]+\\b" },             // Hexadecimal
+      { begin: "-?\\b0b[01]+\\b" },                    // Binary
+      { begin: "-?(inf|infinity)\\b", relevance: 3 }   // Infinity values
+    ]
+  };
+
+
   return {
     name: 'Nushell',
     aliases: [
       'nu',
     ],
     unicodeRegex: true,
+    case_insensitive: true,
     keywords: KEYWORDS,
+    contains: [
+      NUMBER,
+    ]
   };
 }
